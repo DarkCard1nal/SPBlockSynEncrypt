@@ -24,3 +24,23 @@ static std::string PCrypt(const unsigned char key, const std::string blocks) - -
 # More information about algorithms and methods in the comments of 'SPBlockSynEncrypt.h'
 
 # Examples and tests in examples.cpp
+
+# An example of a program call:
+
+unsigned char test1 = 0b10101011; //One character for testing
+unsigned char result1; //Output result 'test1'
+std::cout << "test1: " << std::bitset<8>(test1).to_string() << std::endl;
+result1 = SPBlockSynEncrypt::PCrypt(key1, test1);
+std::cout << "test1 encrypted: " << std::bitset<8>(result1).to_string() << std::endl;
+result1 = SPBlockSynEncrypt::PCrypt(key1, result1);
+std::cout << "test1 decrypted: " << std::bitset<8>(result1).to_string() << std::endl;
+if (test1 == result1)
+	std::cout << "test1 decrypted correctly !" << std::endl << std::endl;
+ 
+The result of the program call:
+
+test1: 10101011
+test1 encrypted: 01010111
+test1 decrypted: 10101011
+test1 decrypted correctly !
+
