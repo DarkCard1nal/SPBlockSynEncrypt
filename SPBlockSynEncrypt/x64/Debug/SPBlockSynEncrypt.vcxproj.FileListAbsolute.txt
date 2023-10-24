@@ -1,0 +1,1 @@
+B:\IT\C++\criptografi\SPBlockSynEncrypt\x64\Debug\SPBlockSynEncrypt.exe
